@@ -42,3 +42,4 @@ $routes->post('/bayar/store', 'Bayar::store');
 $routes->get('/bayar/edit/(:num)', 'Bayar::edit/$1');
 $routes->post('/bayar/update/(:num)', 'Bayar::update/$1');
 $routes->get('/bayar/delete/(:num)', 'Bayar::delete/$1');
+$routes->get('/admin', 'Admin::index');
