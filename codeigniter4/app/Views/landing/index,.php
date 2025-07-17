@@ -17,6 +17,7 @@
         <p>
             Aplikasi pengelolaan kost modern untuk memudahkan manajemen kamar, penghuni, tagihan, dan pembayaran.
         </p>
+        <a class="btn" href="/home">Lihat Info Kost Publik</a>
         <a class="btn" href="/admin">Masuk Admin</a>
         <div class="info">
             <h3>Informasi Kontak</h3>

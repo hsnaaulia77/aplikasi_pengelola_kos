@@ -5,7 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Landing::index');
+$routes->get('/', 'Landing::index');    // Landing page di root
+$routes->get('/home', 'Home::index');   // Halaman depan publik
 $routes->get('/penghuni', 'Penghuni::index');
 $routes->get('/penghuni/create', 'Penghuni::create');
 $routes->post('/penghuni/store', 'Penghuni::store');
