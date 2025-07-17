@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Dashboard Admin Kost</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <h1>Dashboard Admin Kost</h1>

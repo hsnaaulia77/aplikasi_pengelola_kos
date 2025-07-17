@@ -2,24 +2,20 @@
 <html>
 <head>
     <title>Selamat Datang di Kost Harmoni</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; }
-        .container { max-width: 600px; margin: 60px auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
-        h1 { color: #2c3e50; }
-        .btn { display: inline-block; padding: 10px 20px; background: #3498db; color: #fff; border-radius: 5px; text-decoration: none; margin-top: 20px; }
-        .btn:hover { background: #217dbb; }
-        .info { margin-top: 30px; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div class="container">
+        <img src="https://img.icons8.com/fluency/96/000000/home.png" alt="Ilustrasi Rumah" class="illustration">
         <h1>Selamat Datang di Kost Harmoni</h1>
-        <p>
-            Aplikasi pengelolaan kost modern untuk memudahkan manajemen kamar, penghuni, tagihan, dan pembayaran.
-        </p>
-        <a class="btn" href="/home">Lihat Info Kost Publik</a>
-        <a class="btn" href="/admin">Masuk Admin</a>
-        <div class="info">
+        <div class="card">
+            <p>
+                Aplikasi pengelolaan kost modern untuk memudahkan manajemen kamar, penghuni, tagihan, dan pembayaran.
+            </p>
+            <a class="btn" href="/home">Lihat Info Kost Publik</a>
+            <a class="btn" href="/admin">Masuk Admin</a>
+        </div>
+        <div class="card">
             <h3>Informasi Kontak</h3>
             <p>
                 Alamat: Jl. Kenangan No. 123, Kota Bahagia<br>
