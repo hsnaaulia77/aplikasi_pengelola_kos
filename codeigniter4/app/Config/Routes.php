@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Landing::index');    // Landing page di root
+$routes->get('/landing', 'Landing::index');
 $routes->get('/home', 'Home::index');   // Halaman depan publik
 $routes->get('/penghuni', 'Penghuni::index');
 $routes->get('/penghuni/create', 'Penghuni::create');
@@ -44,3 +44,4 @@ $routes->get('/bayar/edit/(:num)', 'Bayar::edit/$1');
 $routes->post('/bayar/update/(:num)', 'Bayar::update/$1');
 $routes->get('/bayar/delete/(:num)', 'Bayar::delete/$1');
 $routes->get('/admin', 'Admin::index');
+
