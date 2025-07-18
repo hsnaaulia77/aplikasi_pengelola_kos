@@ -14,12 +14,13 @@
             min-height: 100vh;
         }
         .container {
-            max-width: 1050px;
-            margin: 48px auto;
-            padding: 64px 32px;
+            width: auto;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 24px 8px;
             background: #fff;
-            border-radius: 40px;
-            box-shadow: 0 12px 48px rgba(191, 161, 129, 0.18);
+            border-radius: 24px;
+            box-shadow: 0 4px 18px rgba(191, 161, 129, 0.10);
         }
         .header-flex {
             display: flex;
@@ -324,7 +325,7 @@
             letter-spacing: 1px;
         }
         @media (max-width: 700px) {
-            .container { padding: 12px 2vw; }
+            .container { padding: 8px 0vw; }
             .header-flex { flex-direction: column; gap: 8px;}
             .logo { width: 60px;}
             .main-title { font-size: 1.3rem;}
@@ -394,19 +395,215 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <section class="section section-header" style="margin-bottom: 32px;">
-            <!-- HEADER -->
-            <div class="header-flex" style="margin-bottom: 32px; align-items: flex-start;">
-                <img src="https://img.icons8.com/color/144/000000/home--v2.png" alt="Logo Kost" class="logo" style="border-radius:50%; box-shadow:0 2px 12px #A8D5BA33; width:80px; height:80px;">
-                <div>
-                    <h1 class="main-title" style="font-size:2.5rem; margin-bottom:0;">Kost Harmoni</h1>
-                    <div class="subtitle" style="font-size:1.1rem; color:#A8D5BA; margin-bottom:4px;">Cozy Stay &mdash; Hunian hangat, aman, dan ramah untuk keluarga & wanita</div>
-                    <div style="font-size:1rem; color:#BFA181; font-weight:400;">Tempat nyaman, harga bersahabat, pengelolaan profesional.</div>
-                </div>
+    <header class="soft-header">
+        <div class="header-left">
+            <img src="<?= base_url('images/logo_kos.png') ?>" alt="Logo" class="header-logo">
+            <span class="header-title">Kos Harmoni</span>
+        </div>
+        <div class="header-right">
+            <a href="/admin" class="header-btn">Login</a>
+            <a href="/register" class="header-btn header-btn-primary">Register</a>
+            <div class="header-dropdown">
+                <button class="header-btn">Menu ▼</button>
             </div>
-        </section>
-        <section class="section section-promo" style="margin-bottom: 36px;">
+        </div>
+    </header>
+    <style>
+        /* --- NAVBAR --- */
+        .soft-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f9f6f2cc;
+            padding: 0 36px;
+            height: 64px;
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 2px 16px #bfa18122;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 2px 8px #a8d5ba33;
+            object-fit: contain;
+        }
+        .header-title {
+            font-size: 1.22rem;
+            font-weight: 800;
+            color: #8d7b6a;
+            letter-spacing: 1px;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-btn {
+            background: #f3ede6;
+            color: #8d7b6a;
+            border: none;
+            border-radius: 16px;
+            padding: 7px 18px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 8px #bfa18122;
+            transition: background 0.18s, color 0.18s;
+            text-decoration: none;
+            height: 36px;
+            display: flex;
+            align-items: center;
+        }
+        .header-btn-primary {
+            background: #bfa181;
+            color: #fff;
+        }
+        .header-btn:hover, .header-btn:focus {
+            background: #e2d3c1;
+            color: #6d5c4a;
+        }
+        .header-btn-primary:hover, .header-btn-primary:focus {
+            background: #a08a6a;
+            color: #fff;
+        }
+        .header-dropdown { position: relative; }
+
+        @media (max-width: 700px) {
+            .soft-header {
+                padding: 0 8px;
+                height: 48px;
+                border-radius: 0 0 18px 18px;
+            }
+            .header-title { font-size: 1rem; }
+            .header-logo { width: 28px; height: 28px; }
+            .header-btn { font-size: 0.95rem; padding: 5px 10px; height: 28px; }
+            .header-right { gap: 6px; }
+        }
+    </style>
+    <script>
+    // Hamburger menu
+    const toggle = document.getElementById('navbarToggle');
+    const menu = document.getElementById('navbarMenu');
+    toggle.onclick = () => menu.classList.toggle('open');
+    // Dropdown logic
+    const dropdowns = document.querySelectorAll('.navbar .dropdown');
+    dropdowns.forEach(drop => {
+        // Desktop: show on hover
+        drop.addEventListener('mouseenter', () => { if(window.innerWidth > 900) drop.classList.add('open'); });
+        drop.addEventListener('mouseleave', () => { if(window.innerWidth > 900) drop.classList.remove('open'); });
+        // Mobile: show on click
+        drop.querySelector('.dropdown-toggle').onclick = function(e) {
+            if(window.innerWidth <= 900) {
+                e.preventDefault();
+                drop.classList.toggle('open');
+            }
+        };
+    });
+    // Close dropdown on outside click (mobile)
+    document.addEventListener('click', function(e) {
+        dropdowns.forEach(drop => {
+            if(!drop.contains(e.target) && window.innerWidth <= 900) drop.classList.remove('open');
+        });
+    });
+    // Highlight menu aktif
+    const links = document.querySelectorAll('.navbar-menu > li > a');
+    const path = window.location.pathname;
+    links.forEach(link => { if(link.getAttribute('href') === path) link.classList.add('active'); });
+    // Smooth scroll for anchor links
+    const anchorLinks = document.querySelectorAll('.navbar-menu a[href^="#"]');
+    anchorLinks.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+    </script>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="main-title">Kost Harmoni</h1>
+            <div class="subtitle">Cozy Stay — Hunian hangat, aman, dan ramah untuk keluarga & wanita</div>
+            <div class="desc">Tempat nyaman, harga bersahabat, pengelolaan profesional.</div>
+        </div>
+    </section>
+
+    <style>
+    .hero-section {
+        position: relative;
+        min-height: 260px;
+        display: flex;
+        align-items: flex-start;
+        background: transparent;
+        border-radius: 0 0 40px 40px;
+        box-shadow: 0 2px 16px #bfa18122;
+        margin-bottom: 32px;
+        overflow: hidden;
+    }
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        background: url('/image/bg-kost.jpg') right center/cover no-repeat;
+        opacity: 0.18; /* Soft background */
+        z-index: 1;
+    }
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, #fff 80%, #fffbe9cc 100%);
+        z-index: 2;
+        border-radius: 0 0 40px 40px;
+    }
+    .hero-content {
+        position: relative;
+        z-index: 3;
+        text-align: left;
+        max-width: 700px;
+        padding: 48px 0 48px 56px;
+    }
+    .main-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #4F6F52;
+        margin-bottom: 0.7rem;
+        letter-spacing: 1px;
+        background: none; /* Hapus highlight */
+    }
+    .subtitle {
+        color: #A8D5BA;
+        font-size: 1.15rem;
+        margin-bottom: 0.4rem;
+    }
+    .desc {
+        color: #BFA181;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    @media (max-width: 700px) {
+        .hero-section {
+            border-radius: 0 0 18px 18px;
+            min-height: 140px;
+        }
+        .hero-content {
+            padding: 24px 8px 24px 16px;
+            max-width: 100%;
+        }
+        .main-title { font-size: 1.3rem; }
+    }
+    </style>
+    <section class="section section-promo" style="margin-bottom: 36px;">
             <!-- PROMO -->
             <div class="promo-animated" style="position:relative; overflow:hidden; border-radius:22px; margin-bottom:28px;">
                 <div class="promo-gradient"></div>
@@ -658,15 +855,15 @@
                         <button class="faq-question" style="width:100%; background:none; border:none; text-align:left; font-weight:700; color:#4F6F52; font-size:1.08rem; display:flex; align-items:center; gap:8px; cursor:pointer; padding:12px 0; transition:background 0.2s;"><span style="transition:transform 0.2s;">&#9654;</span> Bagaimana cara booking kamar?</button>
                         <div class="faq-answer" style="padding:0 0 12px 28px; color:#5B4636; display:none; font-size:1rem;">Silakan hubungi kontak di bawah atau datang langsung ke lokasi.</div>
                     </div>
-                </div>
-            </div>
+        </div>
+        </div>
         </section>
         <section class="section section-peta" style="margin: 44px 0 36px 0;">
             <!-- PETA LOKASI -->
             <h3 class="section-title" style="font-size:1.1rem;">Lokasi Kost</h3>
             <div class="card" style="background:#F5E9DA; border-radius:18px; box-shadow:0 2px 12px #A8D5BA22; padding:28px 22px; margin-bottom:32px;">
                 <iframe src="https://www.google.com/maps?q=-6.200000,106.816666&hl=es;z=14&output=embed" width="100%" height="200" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+        </div>
         </section>
         <footer class="footer-soft" style="margin-top:44px; text-align:center; color:#BFA181; font-size:0.92rem; opacity:0.8; letter-spacing:1px; background:#F5E9DA; padding:36px 0 0 0; border-top:1px solid #F0F7F4; border-radius:0 0 40px 40px;">&copy; <?= date('Y') ?> Kost Harmoni &middot; Cozy Stay for Everyone</footer>
     </div>
