@@ -1,0 +1,45 @@
+CRITICAL - 2025-07-18 07:27:09 --> ErrorException: Undefined variable $fields
+[Method: GET, Route: barang/create]
+in APPPATH\Views\barang\create.php on line 4.
+ 1 APPPATH\Views\barang\create.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fields', 'C:\\xampp\\htdocs\\aplikasi_pengelola_kos\\codeigniter4\\app\\Views\\barang\\create.php', 4)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\aplikasi_pengelola_kos\\codeigniter4\\app\\Views\\barang\\create.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('barang/create', [], true)
+ 5 APPPATH\Controllers\Barang.php(18): view('barang/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Barang->create()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\aplikasi_pengelola_kos\\codeigniter4\\public\\index.php')
+CRITICAL - 2025-07-18 08:31:55 --> ErrorException: Undefined variable $list_kamar
+[Method: GET, Route: relasi/create]
+in APPPATH\Views\relasi\create.php on line 26.
+ 1 APPPATH\Views\relasi\create.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $list_kamar', 'C:\\xampp\\htdocs\\aplikasi_pengelola_kos\\codeigniter4\\app\\Views\\relasi\\create.php', 26)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\aplikasi_pengelola_kos\\codeigniter4\\app\\Views\\relasi\\create.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('relasi/create', [], true)
+ 5 APPPATH\Controllers\KmrPenghuni.php(26): view('relasi/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KmrPenghuni->create()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KmrPenghuni))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\aplikasi_pengelola_kos\\codeigniter4\\public\\index.php')
+CRITICAL - 2025-07-18 09:57:23 --> ErrorException: Undefined variable $list_relasi
+[Method: GET, Route: tagihan/create]
+in APPPATH\Views\tagihan\create.php on line 16.
+ 1 APPPATH\Views\tagihan\create.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $list_relasi', 'C:\\xampp\\htdocs\\aplikasi_pengelola_kos\\codeigniter4\\app\\Views\\tagihan\\create.php', 16)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\aplikasi_pengelola_kos\\codeigniter4\\app\\Views\\tagihan\\create.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('tagihan/create', [], true)
+ 5 APPPATH\Controllers\Tagihan.php(23): view('tagihan/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Tagihan->create()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tagihan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\aplikasi_pengelola_kos\\codeigniter4\\public\\index.php')

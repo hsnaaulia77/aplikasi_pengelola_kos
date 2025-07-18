@@ -537,8 +537,8 @@
             <h1 class="main-title">Kost Harmoni</h1>
             <div class="subtitle">Cozy Stay — Hunian hangat, aman, dan ramah untuk keluarga & wanita</div>
             <div class="desc">Tempat nyaman, harga bersahabat, pengelolaan profesional.</div>
-        </div>
-    </section>
+            </div>
+        </section>
 
     <style>
     .hero-section {
@@ -603,7 +603,7 @@
         .main-title { font-size: 1.3rem; }
     }
     </style>
-    <section class="section section-promo" style="margin-bottom: 36px;">
+        <section class="section section-promo" style="margin-bottom: 36px;">
             <!-- PROMO -->
             <div class="promo-animated" style="position:relative; overflow:hidden; border-radius:22px; margin-bottom:28px;">
                 <div class="promo-gradient"></div>
